@@ -53,7 +53,7 @@
           canvas.parent('#canvas')
           this.ruleSet = new Rule('F', 'FF+[-F+F+F]-[-F+F+F]')
           this.lsys = new Lsystem('F', this.ruleSet)
-          this.turtle = new Turtle(p, this.lsys.sentence, this.height / 3, p.radians(30))
+          this.turtle = new Turtle(p, this.lsys.sentence, this.height / 3, p.radians(25))
         }
       },
       draw (p) {
