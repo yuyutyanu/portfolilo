@@ -4,7 +4,7 @@ class Turtle {
     this.todo = _todo
     this.len = _len
     this.theta = _theta
-    this.weight = 40
+    this.weight = 0
     this.color = '#000'
   }
 
@@ -31,7 +31,7 @@ class Turtle {
 
   getWeight () {
     if (this.weight === 0) {
-      this.weight = 1
+      this.weight = 2
       return this.weight
     }
 
@@ -40,8 +40,9 @@ class Turtle {
   }
 
   getColor () {
-    const colors = ['#E9D460', '#FDE3A7', '#FABE58'] // yellow
-    const index = Math.floor(Math.random() * 3)
+    // const colors = ['#E9D460', '#FDE3A7', '#FABE58'] // yellow
+    const colors = ['#336E7B', '#22313F', '#3A539B']
+    const index = Math.floor(Math.random() * colors.length)
     return colors[index]
   }
 
