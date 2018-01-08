@@ -1,12 +1,23 @@
 <template>
-  <lsystem></lsystem>
+  <div>
+    <div class="system-works">
+      <div class="system-works__item">
+
+      </div>
+    </div>
+  </div>
 </template>
 <script>
-  import Lsystem from '~/components/Lsystem.vue'
-
   export default{
-    components: {
-      Lsystem
-    }
+
   }
 </script>
+
+<style scoped>
+  .system-works{
+
+  }
+  .system-works__item{
+
+  }
+</style>

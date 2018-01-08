@@ -51,9 +51,6 @@
         return () => {
           let canvas = p.createCanvas(this.width, this.height)
           canvas.parent('#canvas')
-          p.stroke(0)
-          p.strokeWeight(2)
-          p.rect(30, 30, p.width - 60, p.height - 60)
           this.ruleSet = new Rule('F', 'FF[+F+F][-F-F]')
           this.lsys = new Lsystem('F', this.ruleSet)
           this.turtle = new Turtle(p, this.lsys.sentence, this.height / 3, p.radians(25))
@@ -62,8 +59,6 @@
       draw (p) {
         return () => {
           p.noFill()
-          p.stroke(0)
-          p.rect(30, 30, p.width - 60, p.height - 60)
           p.translate(this.width / 2, this.height)
           p.rotate(-p.PI / 2)
           this.turtle.render()
