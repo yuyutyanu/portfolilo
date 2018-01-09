@@ -11,7 +11,7 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {href: 'href="https://fonts.googleapis.com/css?family=Great+Vibes"'}
+      {href: 'https://fonts.googleapis.com/css?family=Lato:300', rel:'stylesheet'}
     ]
   },
   /*

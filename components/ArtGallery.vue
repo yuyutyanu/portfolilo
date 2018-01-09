@@ -1,23 +1,43 @@
 <template>
   <div class="contents">
-    <div class="gallery">
-      <div v-for="i in 12" class="gallery-works">
-        <div class="gallery-works__wrap">
-          <img src="/01.png" alt="">
+    <div class="container">
+      <hr class="boundary">
+      <h2 class="title">Art Gallery</h2>
+      <div class="gallery">
+        <div v-for="i in 8" class="gallery-works">
+          <div class="gallery-works__wrap">
+            <img src="/01.png" alt="">
+          </div>
+          <p class="gallery-works__word">word: p5.js, l-system</p>
         </div>
-        <p class="gallery-works__word">word: p5.js, l-system</p>
       </div>
-    </div>
-    <div class="gallery-works__pager">
-      1...2...3...4
+      <div class="gallery-works__pager">
+        1...2...3...4
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
   .contents {
-    padding: 30px 130px;
-    background: #fff;
+    padding-bottom: 100px;
+    background: #f5f5f5;
+  }
+  .container{
+    width:800px;
+    margin: 0 auto;
+  }
+
+  .boundary {
+    width: 10%;
+    margin: 0 auto;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    font-weight: 300;
   }
 
   .gallery {
@@ -25,11 +45,12 @@
     -webkit-justify-content: space-between; /* Safari */
     justify-content: space-between;
     flex-wrap: wrap;
+    width: 100%;
   }
 
   .gallery-works {
-    min-width: 30%;
-    max-width: 30%;
+    min-width: 45%;
+    max-width: 45%;
     margin-bottom: 40px;
   }
 
@@ -63,12 +84,13 @@
   }
 
   .gallery-works__wrap:hover::before {
-    width:100%;
-    background: #fff;
+    width: 100%;
+    background: #f5f5f5;
   }
+
   .gallery-works__wrap:hover::after {
-    width:100%;
-    background: #fff;
+    width: 100%;
+    background: #f5f5f5;
   }
 
   .gallery-works__wrap img {
@@ -78,7 +100,7 @@
   }
 
   .gallery-works__word {
-    padding-top:10px;
+    padding-top: 10px;
   }
 
   .gallery-works__pager {

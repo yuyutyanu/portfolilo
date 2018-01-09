@@ -22,7 +22,7 @@
         p.mousePressed = this.update(p)
       }
       const p5 = new this.$p5(sketch)
-      this.$store.commit('SET_P5', p5)
+      this.p5 = p5
 
       window.addEventListener('resize', this.resizeCanvas)
     },
@@ -33,14 +33,15 @@
         ruleSet: null,
         lsys: null,
         turtle: null,
-        counter: 0
+        counter: 0,
+        p5: null
       }
     },
     methods: {
       resizeCanvas () {
         this.width = window.innerWidth
         this.height = window.innerHeight
-        this.$store.state.p5.resizeCanvas(this.width, this.height)
+        this.p5.resizeCanvas(this.width, this.height)
       },
       preload (p) {
         return () => {
