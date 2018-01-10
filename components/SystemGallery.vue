@@ -22,14 +22,12 @@
 
   .contents {
     background: #f5f5f5;
-    position: relative;
     padding-bottom:100px;
   }
 
   .systems {
     padding:20px 0px;
     width: 100%;
-    position: relative;
   }
 
   .systems .title {
@@ -78,6 +76,7 @@
     position: relative;
     background: url(/01.png) no-repeat center;
     background-size: cover;
+    border:solid 1px #000;
   }
   .system-works:first-child{
     margin-bottom: 70px;

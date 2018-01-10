@@ -53,6 +53,7 @@
             if (i !== 0) {
               dotLine.setFromPoint(this.dotLines[i - 1].toPointX, this.dotLines[i - 1].toPointY)
             }
+            p.stroke(0, 30)
             dotLine.update()
             dotLine.display()
           })
@@ -64,6 +65,7 @@
 
 <style scoped>
   #canvas {
+    position: fixed;
     width: 100%;
     height: 100vh;
   }

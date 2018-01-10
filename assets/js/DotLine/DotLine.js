@@ -12,11 +12,6 @@ class DotLine {
   }
 
   display () {
-    if (this.lineNum !== 5) {
-      this.p.rectMode(this.p.CENTER)
-      this.p.rect(this.toPointX, this.toPointY, 16, 16)
-    }
-
     if (this.lineNum === 1) {
       this.p.line(0, this.p.height / 2, this.len, this.toPointY)
     } else if (this.lineNum === 5) {

@@ -1,5 +1,6 @@
 <template>
   <div class="contents">
+    <dot-line></dot-line>
     <nav class="sidebar">
       <ul>
         <li>SystemGallery</li>
@@ -32,12 +33,14 @@
   </div>
 </template>
 <script>
+  import DotLine from '~/components/DotLine'
   import ArtGallery from '~/components/ArtGallery'
   import SystemGallery from '~/components/SystemGallery'
   export default{
     components: {
       ArtGallery,
-      SystemGallery
+      SystemGallery,
+      DotLine
     },
     methods: {}
   }
