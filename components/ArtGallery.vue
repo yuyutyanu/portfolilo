@@ -6,7 +6,7 @@
       <div class="gallery">
         <div v-for="i in 8" class="gallery-works">
           <div class="gallery-works__wrap">
-            <img src="/01.png" alt="">
+            <img src="/burokkori.png" alt="">
           </div>
           <p class="gallery-works__word">word: p5.js, l-system</p>
         </div>
