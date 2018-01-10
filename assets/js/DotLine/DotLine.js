@@ -19,6 +19,8 @@ class DotLine {
 
     if (this.lineNum === 1) {
       this.p.line(0, this.p.height / 2, this.len, this.toPointY)
+    } else if (this.lineNum === 5) {
+      this.p.line(this.fromPointX, this.fromPointY, this.toPointX, this.p.height / 2)
     } else {
       this.p.line(this.fromPointX, this.fromPointY, this.toPointX, this.toPointY)
     }
