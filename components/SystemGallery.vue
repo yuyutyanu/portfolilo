@@ -1,18 +1,41 @@
 <template>
-  <div class="contents">
+  <div class="contents" id="systems">
     <div class="systems">
       <hr class="boundary">
       <h2 class="title">SystemGallery</h2>
       <div class="system-works-wrap">
-        <div class="system-works" v-for="i in 4">
-          <!--<div class="system-works__description">-->
-          <!--<p>サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト</p>-->
-          <!--</div>-->
+
+        <div class="system-works" v-for="system in systems" @click="system.isVisible = !system.isVisible">
+          <img class="system-works__img" :src="`/systems/${system.name}`" alt="">
         </div>
+        <transition name="fade">
+          <div class="system-works__description system-description" v-for="system in systems" v-if="system.isVisible"
+               @click="system.isVisible = !system.isVisible">
+            <div class="system-description__img-wrap">
+              <img :src="`/systems/${system.name}`" alt="">
+            </div>
+            <p class="system-description__text">{{system.description}}</p>
+            <p>url: hogehoge.jp</p>
+          </div>
+        </transition>
       </div>
     </div>
   </div>
 </template>
+<script>
+  export default{
+    data () {
+      return {
+        systems: [
+          {name: 'job.png', isVisible: false, description: 'テキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト'},
+          {name: 'field.png', isVisible: false, description: 'テキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト'},
+          {name: 'postoru.png', isVisible: false, description: 'テキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト'},
+          {name: 'apo.png', isVisible: false, description: 'テキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト'}
+        ]
+      }
+    }
+  }
+</script>
 
 <style scoped>
   .boundary {
@@ -22,11 +45,11 @@
 
   .contents {
     background: #f5f5f5;
-    padding-bottom:100px;
+    padding-bottom: 100px;
   }
 
   .systems {
-    padding:20px 0px;
+    padding: 20px 0px;
     width: 100%;
   }
 
@@ -46,27 +69,29 @@
     margin: 0 auto;
     position: relative;
   }
-  .system-works-wrap:before{
-    content:"";
+
+  .system-works-wrap:before {
+    content: "";
     position: absolute;
-    top:-30px;
-    right:-40px;
-    width:40px;
-    height:50%;
-    border-top:solid 1px;
-    border-right:solid 1px;
-    border-radius:2px;
+    top: -30px;
+    right: -40px;
+    width: 40px;
+    height: 50%;
+    border-top: solid 1px;
+    border-right: solid 1px;
+    border-radius: 2px;
   }
-  .system-works-wrap:after{
-    content:"";
+
+  .system-works-wrap:after {
+    content: "";
     position: absolute;
-    bottom:-30px;
-    left:-40px;
-    width:40px;
-    height:50%;
-    border-bottom:solid 1px;
-    border-left:solid 1px;
-    border-radius:2px;
+    bottom: -30px;
+    left: -40px;
+    width: 40px;
+    height: 50%;
+    border-bottom: solid 1px;
+    border-left: solid 1px;
+    border-radius: 2px;
   }
 
   .system-works {
@@ -74,18 +99,60 @@
     height: 300px;
     border-radius: 2px;
     position: relative;
-    background: url(/01.png) no-repeat center;
+    background: url(/job.png) no-repeat center;
     background-size: cover;
-    border:solid 1px #000;
+    border: solid 1px #000;
+    position: relative;
   }
-  .system-works:first-child{
+
+  .system-works:first-child {
     margin-bottom: 70px;
   }
 
-  .system-works__description {
-    font-size: 14px;
-    border-top: none;
-    padding: 10px;
+  .system-works__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
+  .fade-enter-active, .fade-leave-active {
+    transition: all .5s;
+  }
+
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+  {
+    opacity: 0;
+  }
+
+  .system-works__description {
+    position: absolute;
+    top: -30px;
+    left: -40px;
+    width: calc(100% + 80px);
+    height: calc(100% + 60px);
+    font-size: 14px;
+    border-top: none;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .system-description__img-wrap {
+    width: 50%;
+    height: 50%;
+    margin: 0 auto;
+    border-radius: 2px;
+  }
+
+  .system-description__img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+  }
+
+  .system-description__text {
+    margin: 30px;
+    padding: 20px;
+    border-radius: 2px;
+  }
 </style>

@@ -19,7 +19,8 @@ module.exports = {
   */
   loading: { color: '#3B8070' },
   plugins: [
-    { src: '~/plugins/p5.js', ssr: false}
+    { src: '~/plugins/p5.js', ssr: false},
+    { src: '~/plugins/scrollTo.js', ssr: false}
   ],
   /*
   ** Build configuration

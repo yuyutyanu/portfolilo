@@ -1,30 +1,48 @@
 <template>
-  <div class="contents">
+  <div class="contents" id="art">
     <div class="container">
       <hr class="boundary">
       <h2 class="title">Art Gallery</h2>
       <div class="gallery">
-        <div v-for="i in 8" class="gallery-works">
+        <div v-for="works in gallery" class="gallery-works">
           <div class="gallery-works__wrap">
-            <img src="/burokkori.png" alt="">
+            <img :src="`/art/${works.name}`" alt="">
           </div>
-          <p class="gallery-works__word">word: p5.js, l-system</p>
+          <p class="gallery-works__word">{{works.word}}</p>
         </div>
       </div>
-      <div class="gallery-works__pager">
-        1...2...3...4
-      </div>
+      <!--<div class="gallery-works__pager">-->
+      <!--1...2...3...4-->
+      <!--</div>-->
     </div>
   </div>
 </template>
+
+<script>
+  export default {
+    data () {
+      return {
+        gallery: [
+          {name: 'fractal.png', word: 'p5.js, fractal'},
+          {name: 'l-system.png', word: 'p5.js, l-system'},
+          {name: 'l-system.png', word: 'p5.js, l-system'},
+          {name: 'l-system.png', word: 'p5.js, l-system'},
+          {name: 'l-system.png', word: 'p5.js, l-system'},
+          {name: 'l-system.png', word: 'p5.js, l-system'}
+        ]
+      }
+    }
+  }
+</script>
 
 <style scoped>
   .contents {
     padding-bottom: 100px;
     background: #f5f5f5;
   }
-  .container{
-    width:800px;
+
+  .container {
+    width: 800px;
     margin: 0 auto;
   }
 

@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "nuxt": "^1.0.0-rc11",
-    "p5": "^0.5.16"
+    "p5": "^0.5.16",
+    "vue-scrollto": "^2.8.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
