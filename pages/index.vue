@@ -104,6 +104,7 @@
 
   .me {
     background: #f5f5f5;
+    padding-top:20px;
     padding-bottom:50px;
   }
   .me .container{

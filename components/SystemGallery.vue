@@ -65,34 +65,37 @@
     flex-wrap: wrap;
     -webkit-justify-content: space-around; /* Safari */
     justify-content: space-around;
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
     position: relative;
+    box-shadow:0 0 20px gray;
+    border-radius: 2px;
+    padding:40px;
   }
 
-  .system-works-wrap:before {
-    content: "";
-    position: absolute;
-    top: -30px;
-    right: -40px;
-    width: 40px;
-    height: 50%;
-    border-top: solid 1px;
-    border-right: solid 1px;
-    border-radius: 2px;
-  }
+  /*.system-works-wrap:before {*/
+    /*content: "";*/
+    /*position: absolute;*/
+    /*top: -30px;*/
+    /*right: -40px;*/
+    /*width: 40px;*/
+    /*height: 50%;*/
+    /*border-top: solid 1px;*/
+    /*border-right: solid 1px;*/
+    /*border-radius: 2px;*/
+  /*}*/
 
-  .system-works-wrap:after {
-    content: "";
-    position: absolute;
-    bottom: -30px;
-    left: -40px;
-    width: 40px;
-    height: 50%;
-    border-bottom: solid 1px;
-    border-left: solid 1px;
-    border-radius: 2px;
-  }
+  /*.system-works-wrap:after {*/
+    /*content: "";*/
+    /*position: absolute;*/
+    /*bottom: -30px;*/
+    /*left: -40px;*/
+    /*width: 40px;*/
+    /*height: 50%;*/
+    /*border-bottom: solid 1px;*/
+    /*border-left: solid 1px;*/
+    /*border-radius: 2px;*/
+  /*}*/
 
   .system-works {
     width: 45%;
@@ -126,13 +129,13 @@
 
   .system-works__description {
     position: absolute;
-    top: -30px;
-    left: -40px;
-    width: calc(100% + 80px);
-    height: calc(100% + 60px);
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
     font-size: 14px;
-    border-top: none;
-    padding: 20px;
+    /*border-top: none;*/
+    /*padding: 20px;*/
     background: rgba(0, 0, 0, 0.2);
   }
 
