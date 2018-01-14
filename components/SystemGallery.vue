@@ -8,16 +8,16 @@
         <div class="system-works" v-for="system in systems" @click="system.isVisible = !system.isVisible">
           <img class="system-works__img" :src="`/systems/${system.name}`" alt="">
         </div>
-        <transition name="fade">
-          <div class="system-works__description system-description" v-for="system in systems" v-if="system.isVisible"
-               @click="system.isVisible = !system.isVisible">
-            <div class="system-description__img-wrap">
-              <img :src="`/systems/${system.name}`" alt="">
-            </div>
-            <p class="system-description__text">{{system.description}}</p>
-            <p>url: hogehoge.jp</p>
-          </div>
-        </transition>
+        <!--<transition name="fade">-->
+          <!--<div class="system-works__description system-description" v-for="system in systems" v-if="system.isVisible"-->
+               <!--@click="system.isVisible = !system.isVisible">-->
+            <!--<div class="system-description__img-wrap">-->
+              <!--<img :src="`/systems/${system.name}`" alt="">-->
+            <!--</div>-->
+            <!--<p class="system-description__text">{{system.description}}</p>-->
+            <!--<p>url: hogehoge.jp</p>-->
+          <!--</div>-->
+        <!--</transition>-->
       </div>
     </div>
   </div>
@@ -68,34 +68,7 @@
     max-width: 700px;
     margin: 0 auto;
     position: relative;
-    box-shadow:0 0 20px gray;
-    border-radius: 2px;
-    padding:40px;
   }
-
-  /*.system-works-wrap:before {*/
-    /*content: "";*/
-    /*position: absolute;*/
-    /*top: -30px;*/
-    /*right: -40px;*/
-    /*width: 40px;*/
-    /*height: 50%;*/
-    /*border-top: solid 1px;*/
-    /*border-right: solid 1px;*/
-    /*border-radius: 2px;*/
-  /*}*/
-
-  /*.system-works-wrap:after {*/
-    /*content: "";*/
-    /*position: absolute;*/
-    /*bottom: -30px;*/
-    /*left: -40px;*/
-    /*width: 40px;*/
-    /*height: 50%;*/
-    /*border-bottom: solid 1px;*/
-    /*border-left: solid 1px;*/
-    /*border-radius: 2px;*/
-  /*}*/
 
   .system-works {
     width: 45%;
@@ -104,8 +77,8 @@
     position: relative;
     background: url(/job.png) no-repeat center;
     background-size: cover;
-    border: solid 1px #000;
-    position: relative;
+    box-shadow: 0 0 20px gray;
+    padding:20px;
   }
 
   .system-works:first-child {
@@ -129,13 +102,12 @@
 
   .system-works__description {
     position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
     font-size: 14px;
-    /*border-top: none;*/
-    /*padding: 20px;*/
+    transform:translate(-50%, -50%);
     background: rgba(0, 0, 0, 0.2);
   }
 
