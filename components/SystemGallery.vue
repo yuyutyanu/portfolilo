@@ -6,17 +6,19 @@
       <div class="system-works-wrap">
 
         <div class="system-works" v-for="system in systems" @click="system.isVisible = !system.isVisible">
-          <img class="system-works__img" :src="`/systems/${system.name}`" alt="">
+          <a :href="system.url"target="_blank">
+            <img class="system-works__img" :src="`/systems/${system.name}`" alt="">
+          </a>
         </div>
         <!--<transition name="fade">-->
-          <!--<div class="system-works__description system-description" v-for="system in systems" v-if="system.isVisible"-->
-               <!--@click="system.isVisible = !system.isVisible">-->
-            <!--<div class="system-description__img-wrap">-->
-              <!--<img :src="`/systems/${system.name}`" alt="">-->
-            <!--</div>-->
-            <!--<p class="system-description__text">{{system.description}}</p>-->
-            <!--<p>url: hogehoge.jp</p>-->
-          <!--</div>-->
+        <!--<div class="system-works__description system-description" v-for="system in systems" v-if="system.isVisible"-->
+        <!--@click="system.isVisible = !system.isVisible">-->
+        <!--<div class="system-description__img-wrap">-->
+        <!--<img :src="`/systems/${system.name}`" alt="">-->
+        <!--</div>-->
+        <!--<p class="system-description__text">{{system.description}}</p>-->
+        <!--<p>url: hogehoge.jp</p>-->
+        <!--</div>-->
         <!--</transition>-->
       </div>
     </div>
@@ -27,10 +29,15 @@
     data () {
       return {
         systems: [
-          {name: 'job.png', isVisible: false, description: 'テキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト'},
-          {name: 'field.png', isVisible: false, description: 'テキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト'},
-          {name: 'postoru.png', isVisible: false, description: 'テキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト'},
-          {name: 'apo.png', isVisible: false, description: 'テキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト'}
+          {
+            name: 'job.png',
+            isVisible: false,
+            description: 'テキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト',
+            url: 'https://job-test-dev.herokuapp.com/'
+          },
+          {name: 'field.png', isVisible: false, description: 'テキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト', url: ''},
+          {name: 'postoru.png', isVisible: false, description: 'テキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト', url: ''},
+          {name: 'apo.png', isVisible: false, description: 'テキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト', url: ''}
         ]
       }
     }
@@ -69,6 +76,11 @@
     margin: 0 auto;
     position: relative;
   }
+  .system-works a{
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
 
   .system-works {
     width: 45%;
@@ -78,7 +90,7 @@
     background: url(/job.png) no-repeat center;
     background-size: cover;
     box-shadow: 0 0 20px gray;
-    padding:20px;
+    padding: 20px;
   }
 
   .system-works:first-child {
@@ -107,7 +119,7 @@
     width: 80%;
     height: 80%;
     font-size: 14px;
-    transform:translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     background: rgba(0, 0, 0, 0.2);
   }
 

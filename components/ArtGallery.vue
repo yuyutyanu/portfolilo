@@ -6,7 +6,9 @@
       <div class="gallery">
         <div v-for="works in gallery" class="gallery-works">
           <div class="gallery-works__wrap">
-            <img :src="`/art/${works.name}`" alt="">
+            <nuxt-link to="art/eddy">
+              <img :src="`/art/${works.name}`" alt="">
+            </nuxt-link>
           </div>
           <p class="gallery-works__word">{{works.word}}</p>
         </div>
