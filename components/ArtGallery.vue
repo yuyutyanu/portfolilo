@@ -6,7 +6,7 @@
       <div class="gallery">
         <div v-for="works in gallery" class="gallery-works">
           <div class="gallery-works__wrap">
-            <nuxt-link to="art/eddy">
+            <nuxt-link :to="`art/${works.location}`">
               <img :src="`/art/${works.name}`" alt="">
             </nuxt-link>
           </div>
@@ -25,12 +25,12 @@
     data () {
       return {
         gallery: [
-          {name: 'fractal.png', word: 'p5.js, fractal'},
-          {name: 'l-system.png', word: 'p5.js, l-system'},
-          {name: 'l-system.png', word: 'p5.js, l-system'},
-          {name: 'l-system.png', word: 'p5.js, l-system'},
-          {name: 'l-system.png', word: 'p5.js, l-system'},
-          {name: 'l-system.png', word: 'p5.js, l-system'}
+          {name: 'fractal.png', word: 'p5.js, fractal', location: ''},
+          {name: 'l-system.png', word: 'p5.js, l-system', location: ''},
+          {name: 'eddy.png', word: 'p5.js, eddy ', location: 'eddy'},
+          {name: 'sin-wave.png', word: 'p5.js, sin-wave', location: 'sin-wave'},
+          {name: 'l-system.png', word: 'p5.js, l-system', location: ''},
+          {name: 'l-system.png', word: 'p5.js, l-system', location: ''}
         ]
       }
     }
@@ -38,6 +38,9 @@
 </script>
 
 <style scoped>
+  a{
+    color:gray
+  }
   .contents {
     padding-bottom: 100px;
     background: #f5f5f5;
@@ -103,20 +106,22 @@
     transition: all .5s ease-out;
   }
 
-  .gallery-works__wrap:hover::before {
-    width: 100%;
-    background: #f5f5f5;
-  }
+  /*.gallery-works__wrap:hover::before {*/
+    /*width: 100%;*/
+    /*background: #f5f5f5;*/
+  /*}*/
 
-  .gallery-works__wrap:hover::after {
-    width: 100%;
-    background: #f5f5f5;
-  }
+  /*.gallery-works__wrap:hover::after {*/
+    /*width: 100%;*/
+    /*background: #f5f5f5;*/
+  /*}*/
 
   .gallery-works__wrap img {
     width: 85%;
     display: block;
     margin: 0 auto;
+    padding:5px;
+    box-shadow: 0 0 5px;
   }
 
   .gallery-works__word {
