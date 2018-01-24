@@ -25,12 +25,12 @@
     data () {
       return {
         gallery: [
-          {src: 'fractal.png', word: 'p5.js, fractal', location: ''},
-          {src: 'l-system.png', word: 'p5.js, l-system', location: ''},
-          {src: 'eddy.png', word: 'p5.js, eddy ', location: 'eddy'},
-          {src: 'sin-wave.png', word: 'p5.js, sin-wave', location: 'sin-wave'},
-          {src: 'random-triangle.png', word: 'p5.js, random-triangle', location: 'triangle'},
-          {src: 'l-system.png', word: 'p5.js, l-system', location: ''}
+          {src: 'fractal.png', word: 'fractal', location: ''},
+          {src: 'l-system.png', word: 'l-system', location: ''},
+          {src: 'eddy.png', word: 'eddy ', location: 'eddy'},
+          {src: 'sin-wave.png', word: 'sin-wave', location: 'sin-wave'},
+          {src: 'random-triangle.png', word: 'random-triangle', location: 'triangle'},
+          {src: 'noise-circle.png', word: 'noise-circle', location: 'circle'}
         ]
       }
     }
