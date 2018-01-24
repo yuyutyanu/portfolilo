@@ -71,8 +71,8 @@
       },
       sinWave (p) {
         const amplitude = 230
-        let x = amplitude * p.cos(p.TWO_PI * p.frameCount / 120)
-        let y = amplitude * p.sin(p.TWO_PI * p.frameCount / 120)
+        let x = amplitude * p.cos(p.TWO_PI * p.frameCount / 160)
+        let y = amplitude * p.sin(p.TWO_PI * p.frameCount / 160)
 
         p.line(0, 0, x, 0)
         p.line(0, 0, 0, y)
