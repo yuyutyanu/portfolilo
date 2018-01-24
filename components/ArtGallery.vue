@@ -7,7 +7,7 @@
         <div v-for="works in gallery" class="gallery-works">
           <div class="gallery-works__wrap">
             <nuxt-link :to="`art/${works.location}`">
-              <img :src="`/art/${works.name}`" alt="">
+              <img :src="`/art/${works.src}`" alt="">
             </nuxt-link>
           </div>
           <p class="gallery-works__word">{{works.word}}</p>
@@ -25,12 +25,12 @@
     data () {
       return {
         gallery: [
-          {name: 'fractal.png', word: 'p5.js, fractal', location: ''},
-          {name: 'l-system.png', word: 'p5.js, l-system', location: ''},
-          {name: 'eddy.png', word: 'p5.js, eddy ', location: 'eddy'},
-          {name: 'sin-wave.png', word: 'p5.js, sin-wave', location: 'sin-wave'},
-          {name: 'l-system.png', word: 'p5.js, l-system', location: ''},
-          {name: 'l-system.png', word: 'p5.js, l-system', location: ''}
+          {src: 'fractal.png', word: 'p5.js, fractal', location: ''},
+          {src: 'l-system.png', word: 'p5.js, l-system', location: ''},
+          {src: 'eddy.png', word: 'p5.js, eddy ', location: 'eddy'},
+          {src: 'sin-wave.png', word: 'p5.js, sin-wave', location: 'sin-wave'},
+          {src: 'random-triangle.png', word: 'p5.js, random-triangle', location: 'triangle'},
+          {src: 'l-system.png', word: 'p5.js, l-system', location: ''}
         ]
       }
     }
