@@ -25,7 +25,7 @@
     data () {
       return {
         gallery: [
-          {src: 'fractal.png', word: 'fractal', location: ''},
+          {src: 'fractal.png', word: 'fractal', location: 'polygon'},
           {src: 'l-system.png', word: 'l-system', location: ''},
           {src: 'eddy.png', word: 'eddy ', location: 'eddy'},
           {src: 'sin-wave.png', word: 'sin-wave', location: 'sin-wave'},
