@@ -1,18 +1,41 @@
 import PointObj from '~/assets/js/Polygon/PointObj.js'
+let childBranches = []
+
 class Branch {
-  constructor (level, num, points) {
+  constructor (level, num, points, strutFactor) {
     this.num = num
+    this.level = level
+    this.maxLevel = 2
     this.outerPoints = points
-    this.strutFactor = 0.2
+    this.strutFactor = strutFactor
     this.midPoints = this.calcMidPoints()
     this.projPoints = this.calcStrutPoints()
+    if ((this.level + 1) < this.maxLevel) {
+      childBranches.push(new Branch(level + 1, 0, this.projPoints, strutFactor))
+
+      for (let i = 0; i < this.outerPoints.length; i++) {
+        let nextIndex = i - 1
+        if (nextIndex < 0) nextIndex += this.outerPoints.length
+        childBranches.push(new Branch(level + 1, 0, [
+          this.outerPoints[i],
+          this.midPoints[i],
+          this.projPoints[i],
+          this.projPoints[nextIndex],
+          this.midPoints[nextIndex]
+        ], strutFactor))
+      }
+    }
+  }
+  getChild () {
+    const rtnBranch = childBranches
+    childBranches = []
+    return rtnBranch
   }
   calcMidPoints () {
     const midPointArray = []
     for (let i = 0; i < this.outerPoints.length; i++) {
       let nextIndex = i + 1
       if (nextIndex === this.outerPoints.length) { nextIndex = 0 }
-
       midPointArray.push(this.calcMidPoint(this.outerPoints[i], this.outerPoints[nextIndex]))
     }
     return midPointArray
