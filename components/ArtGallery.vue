@@ -26,7 +26,7 @@
       return {
         gallery: [
           {src: 'polygon.png', word: 'fractal-polygon', location: 'polygon'},
-          {src: 'l-system.png', word: 'l-system', location: ''},
+          {src: 'l-system.png', word: 'l-system', location: 'l-system'},
           {src: 'eddy.png', word: 'eddy ', location: 'eddy'},
           {src: 'sin-wave.png', word: 'sin-wave', location: 'sin-wave'},
           {src: 'random-triangle.png', word: 'random-triangle', location: 'triangle'},
