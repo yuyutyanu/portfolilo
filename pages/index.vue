@@ -1,6 +1,6 @@
 <template>
   <div class="contents">
-    <dot-line></dot-line>
+    <dot-line class="dotLine"></dot-line>
     <nav class="sidebar">
       <ul>
         <li><a href="#" v-scroll-to="'#me'">Me</a></li>
@@ -108,7 +108,8 @@
     padding-bottom:50px;
   }
   .me .container{
-    width: 600px;
+    max-width: 600px;
+    min-width:100%;
     margin: 0 auto;
     padding:20px;
   }
@@ -159,7 +160,23 @@
   }
 
   .container {
-    width: 960px;
+    max-width: 960px;
+    min-width:100%;
     margin: 0 auto;
+  }
+
+  @media (max-width:960px) {
+    .sidebar{
+      display: none;
+    }
+  }
+  @media (max-width:480px){
+    .dotLine{
+      display: none;
+    }
+    .contents{
+      padding:5px;
+      background:#f5f5f5;
+    }
   }
 </style>

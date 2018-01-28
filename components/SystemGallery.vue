@@ -142,4 +142,11 @@
     padding: 20px;
     border-radius: 2px;
   }
+
+  @media (max-width:480px){
+    .system-works {
+      box-shadow: 0 0 2px gray;
+      padding:0;
+    }
+  }
 </style>

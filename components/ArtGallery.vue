@@ -13,9 +13,6 @@
           <p class="gallery-works__word">{{works.word}}</p>
         </div>
       </div>
-      <!--<div class="gallery-works__pager">-->
-      <!--1...2...3...4-->
-      <!--</div>-->
     </div>
   </div>
 </template>
@@ -133,4 +130,9 @@
     font-size: 20px;
   }
 
+  @media (max-width:900px) {
+    .container{
+      width:80%;
+    }
+  }
 </style>
