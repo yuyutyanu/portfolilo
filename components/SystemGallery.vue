@@ -5,21 +5,12 @@
       <h2 class="title">SystemGallery</h2>
       <div class="system-works-wrap">
 
-        <div class="system-works" v-for="system in systems" @click="system.isVisible = !system.isVisible">
-          <a :href="system.url"target="_blank">
+        <div class="system-works" v-for="system in systems">
+          <a :href="system.url" target="_blank">
             <img class="system-works__img" :src="`/systems/${system.name}`" alt="">
           </a>
+          <p class="system-works__description">{{system.description}}</p>
         </div>
-        <!--<transition name="fade">-->
-        <!--<div class="system-works__description system-description" v-for="system in systems" v-if="system.isVisible"-->
-        <!--@click="system.isVisible = !system.isVisible">-->
-        <!--<div class="system-description__img-wrap">-->
-        <!--<img :src="`/systems/${system.name}`" alt="">-->
-        <!--</div>-->
-        <!--<p class="system-description__text">{{system.description}}</p>-->
-        <!--<p>url: hogehoge.jp</p>-->
-        <!--</div>-->
-        <!--</transition>-->
       </div>
     </div>
   </div>
@@ -31,13 +22,23 @@
         systems: [
           {
             name: 'job.png',
-            isVisible: false,
-            description: 'テキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト',
+            description: '社員全体の勤怠情報を管理するWebアプリケーション',
             url: 'https://job-test-dev.herokuapp.com/'
           },
-          {name: 'field.png', isVisible: false, description: 'テキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト', url: ''},
-          {name: 'postoru.png', isVisible: false, description: 'テキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト', url: ''},
-          {name: 'apo.png', isVisible: false, description: 'テキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト', url: ''}
+          {
+            name: 'field.png',
+            description: '複数人での同時編集可能なマークダウン形式のエディタ',
+            url: 'https://field-md.herokuapp.com'
+          },
+          {
+            name: 'postoru.png',
+            description: '作成中：匿名で誰でも好きに投稿できるブログ',
+            url: ''},
+          {
+            name: 'noimage.jpg',
+            description: '作成中：身近な人にアポイントを取る手間を省くアプリ',
+            url: ''
+          }
         ]
       }
     }
@@ -76,9 +77,10 @@
     margin: 0 auto;
     position: relative;
   }
-  .system-works a{
+
+  .system-works a {
     display: block;
-    height: 100%;
+    height: 75%;
     width: 100%;
   }
 
@@ -89,8 +91,14 @@
     position: relative;
     background: url(/job.png) no-repeat center;
     background-size: cover;
-    box-shadow: 0 0 20px gray;
+    box-shadow: 0 0 5px gray;
     padding: 20px;
+  }
+  .system-works__description{
+    margin-top:10px;
+    font-size:14px;
+    padding:10px;
+    font-weight:300;
   }
 
   .system-works:first-child {
@@ -99,7 +107,7 @@
 
   .system-works__img {
     width: 100%;
-    height: 100%;
+    height:100%;
     object-fit: cover;
   }
 
@@ -112,41 +120,15 @@
     opacity: 0;
   }
 
-  .system-works__description {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 80%;
-    height: 80%;
-    font-size: 14px;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.2);
-  }
 
-  .system-description__img-wrap {
-    width: 50%;
-    height: 50%;
-    margin: 0 auto;
-    border-radius: 2px;
-  }
-
-  .system-description__img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 2px;
-  }
-
-  .system-description__text {
-    margin: 30px;
-    padding: 20px;
-    border-radius: 2px;
-  }
-
-  @media (max-width:480px){
+  @media (max-width: 480px) {
     .system-works {
       box-shadow: 0 0 2px gray;
-      padding:0;
+      padding: 0;
+    }
+    .system-works__description{
+      margin:0;
+      font-size:12px;
     }
   }
 </style>

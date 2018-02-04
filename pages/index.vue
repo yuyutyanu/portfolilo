@@ -8,7 +8,7 @@
         <li><a href="" v-scroll-to="'#art'">ArtGellery</a></li>
         <li><a href="" v-scroll-to="'#skill'">Skill</a></li>
         <li><a href="" v-scroll-to="'#contact'">Contact</a></li>
-        <li><a href="">Blog</a></li>
+        <li><a href="https://qiita.com/chanuu" target="_blank">Blog</a></li>
       </ul>
     </nav>
     <div class="me" id="me">
