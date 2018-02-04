@@ -32,8 +32,8 @@
           },
           {
             name: 'postoru.png',
-            description: '作成中：匿名で誰でも好きに投稿できるブログ',
-            url: ''},
+            description: '匿名で誰でも好きに投稿できるブログ',
+            url: 'https://blog-app-.herokuapp.com/'},
           {
             name: 'noimage.jpg',
             description: '作成中：身近な人にアポイントを取る手間を省くアプリ',
